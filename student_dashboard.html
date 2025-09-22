@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* Basic styles from previous pages for consistency */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Header/Navbar */
+        .navbar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .navbar .user-info {
+            font-weight: 500;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            background-color: #e74c3c;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #c0392b;
+        }
+
+        /* Main container */
+        .container {
+            padding: 30px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Section styling */
+        .dashboard-section {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        .dashboard-section h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .submit-button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>Student Dashboard</h1>
+        <span class="user-info">Welcome, Student User!</span>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-section">
+            <h2>Join a Class</h2>
+            <form action="/student/join-class" method="post">
+                <div class="form-group">
+                    <label for="class-code">Class Code</label>
+                    <input type="text" id="class-code" name="class_code" placeholder="Enter the code from your faculty" required>
+                </div>
+                <button type="submit" class="submit-button">Join Class</button>
+            </form>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>My Group & Project</h2>
+            <!-- This area will be dynamic. It could show group creation options or project status -->
+            <p>You have not joined a class yet. Join a class to form a group.</p>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Your Details</h2>
+            <form action="/student/update-details" method="post">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full_name" value="Student User" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="student@example.com" readonly>
+                </div>
+                <button type="submit" class="submit-button">Update Details</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
