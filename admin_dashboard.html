@@ -21,11 +21,11 @@
             <form action="/admin/create-class" method="post">
                 <div class="form-group">
                     <label for="class-name">Class Name</label>
-                    <input type="text" id="class-name" name="class_name" placeholder="e.g., Software Engineering Capstone" required>
+                    <input type="text" id="class-name" name="class_name"  required>
                 </div>
                 <div class="form-group">
                     <label for="class-code">Class Code (Unique Identifier)</label>
-                    <input type="text" id="class-code" name="class_code" placeholder="e.g., CS499-FALL2024" required>
+                    <input type="text" id="class-code" name="class_code"  required>
                 </div>
                 <button type="submit" class="submit-button">Create Class</button>
             </form>
@@ -37,12 +37,19 @@
             <form action="/admin/update-details" method="post">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full_name" value="Admin User" required>
+                    <input type="text" id="full-name" name="full_name"  required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="admin@example.com" readonly>
+                    <input type="email" id="email" name="email"  required>
                 </div>
+
+                 <div class="form-group">
+                    <label for="id">identity number</label>
+                    <input type="id" id="id" name="id"  required>
+                </div>
+
+                
                 <button type="submit" class="submit-button">Update Details</button>
             </form>
         </div>
