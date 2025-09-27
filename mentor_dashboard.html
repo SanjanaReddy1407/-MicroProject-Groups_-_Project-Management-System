@@ -114,7 +114,7 @@
             <form action="/mentor/join-class" method="post">
                 <div class="form-group">
                     <label for="class-code">Class Code</label>
-                    <input type="text" id="class-code" name="class_code" placeholder="Enter the code provided by the faculty" required>
+                    <input type="text" id="class-code" name="class_code" required>
                 </div>
                 <button type="submit" class="submit-button">Join Class</button>
             </form>
@@ -132,11 +132,19 @@
             <form action="/mentor/update-details" method="post">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full_name" value="Mentor User" required>
+                    <input type="text" id="full-name" name="full_name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="mentor@example.com" readonly>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="full-name">Subject </label>
+                    <input type="text" id="full-name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="full-name">identity number</label>
+                    <input type="number" id="full-name" name="full_name" required>
                 </div>
                 <button type="submit" class="submit-button">Update Details</button>
             </form>
