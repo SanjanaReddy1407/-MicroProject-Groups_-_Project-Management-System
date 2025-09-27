@@ -114,7 +114,7 @@
             <form action="/student/join-class" method="post">
                 <div class="form-group">
                     <label for="class-code">Class Code</label>
-                    <input type="text" id="class-code" name="class_code" placeholder="Enter the code from your faculty" required>
+                    <input type="text" id="class-code" name="class_code" required>
                 </div>
                 <button type="submit" class="submit-button">Join Class</button>
             </form>
@@ -122,7 +122,7 @@
 
         <div class="dashboard-section">
             <h2>My Group & Project</h2>
-            <!-- This area will be dynamic. It could show group creation options or project status -->
+           
             <p>You have not joined a class yet. Join a class to form a group.</p>
         </div>
 
@@ -131,12 +131,28 @@
             <form action="/student/update-details" method="post">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full_name" value="Student User" required>
+                    <input type="text" id="full-name" name="full_name"  required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="student@example.com" readonly>
+                    <label for="email">Email (COLLEGE) </label>
+                    <input type="email" id="email" name="email" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="email"> CGPA </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">SEMESTER</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"> Department </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+
                 <button type="submit" class="submit-button">Update Details</button>
             </form>
         </div>
