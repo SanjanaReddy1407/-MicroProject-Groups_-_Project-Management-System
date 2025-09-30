@@ -26,6 +26,8 @@
         .navbar h1 {
             margin: 0;
             font-size: 1.5em;
+            text-align: center;
+            flex: 1;
         }
         .navbar .user-info {
             font-weight: 500;
@@ -104,7 +106,7 @@
 
     <div class="navbar">
         <h1>Mentor Dashboard</h1>
-        <span class="user-info">Welcome, Mentor User!</span>
+        <div class="user-info">Welcome, <span id="mentorNameDisplay">username</span></div>
         <a href="/logout">Logout</a>
     </div>
 
