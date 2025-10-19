@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome - Group & Project Management</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+    /* Background */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: 'Poppins', sans-serif;
+      color: #e0e6f1;
+      overflow: scroll;
+
+      
+    }
+
+    /* Container */
+    .welcome-box {
+      background: rgba(0,0,0,0.45);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0,191,255,0.5);
+      text-align: center;
+      max-width: 600px;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+      transform: translateY(40px);
+
+      font-size: 1.5rem;
+            color: #f8f6f6;
+            margin-bottom: 20px;
+            font-weight: 300;
+    }
+
+
+    .question {
+            font-size: 1.5em;
+            color: #f8f8fa;
+            margin-bottom: 40px;
+            font-weight: 600;
+            font-size: 1.8rem;
+            shape-margin: 200;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 30px; /* Space between buttons */
+            max-width: 1000px;
+            width: 100%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+            font-weight: 800;
+            justify-content: center;
+        }
+
+
+        .role-button {
+            flex-grow: 1;
+            padding: 25px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; /* For links */
+        }
+
+        .role-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .role-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Specific Button Colors */
+        #studentBtn { background-color: var(--student-color); }
+        #mentorBtn { background-color: var(--mentor-color); }
+        #adminBtn { background-color: var(--admin-color); }
+
+    /* Gradient Animated Title */
+    
+
+    /* Subtitle */
+    
+
+    
+    #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* makes video fill screen */
+  z-index: -1; /* puts video behind content */
+  filter: brightness(0.5); /* optional dark overlay */
+}
+
+    
+    
+
+    /* Animations */
+    @keyframes gradientShift {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .welcome-box {
+        padding: 30px 25px;
+      }
+
+      
+    }
+  </style>
+  
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="3255275-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    <source src="3255275-uhd_3840_2160_25fps.webm" type="video/webm">
+  </video>
+
+  <div class="welcome-box">
+    <h5>Welcome  To👋</h5>
+        <p style="font-size: 2.2rem; font-weight: 1000; margin-bottom: flex; display: block; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #84acb3da; font-size: 3rem;" > AUTHENTICATION, ANALYSIS BASED 
+GROUP AND PROJECT MANAGEMENT SYSTEM</p>
+  
+
+  <div class="question">
+        Please select your role to proceed:
+    </div>
+
+    <div class="button-container">
+        <a href="student_interface.html">
+        <a id="studentBtn" class="role-button" onclick="selectRole('Student')">
+            <span class="role-icon">🧑‍🎓</span>
+            Student
+        </a>
+        </a>
+
+        <a href="mentor_interface.html">
+        <a id="mentorBtn" class="role-button" onclick="selectRole('Faculty')">
+            <span class="role-icon">👨‍🏫</span>
+            Mentor
+        </a>
+        </a>
+
+        <a href="admin_interface.html">
+        <a id="adminBtn" class="role-button" onclick="selectRole('Admin')">
+            <span class="role-icon">👑</span>
+            Admin
+        </a>
+        </a>
+
+        
+    </div>
+
+    
+
+     <a href="/enroll" class="register-link">
+       <button style="width: fit-content; background-color: rgb(23, 78, 60); font-size: 1.2rem; font-weight: 600; margin-top: 20px; margin-bottom: 20px; color: wheat;"  class="register-button">
+            New User? Register Here First! 📝
+        </button>
+    </a>
+
+
+    </div>
+    <form id="roleForm" style="display:none;" method="GET">
+        <input type="hidden" name="role" id="selectedRoleInput">
+    </form>
+    <script>
+        function selectRole(role) {
+            // In a simple HTML/JS context, we can redirect directly based on the role.
+            // When integrated with Flask, these paths will be handled by the server.
+            
+            if (role === 'Student') {
+                // Students and Faculty go to the common Enrollment/Login page
+                // We'll pass the role along as a URL parameter for the next page to pre-select it.
+                // Assuming /login is the next step for both existing users and new ones (who then click enroll).
+                window.location.href = 'student_interface.html?role=' + role; 
+
+            } else if (role === 'Faculty') {
+                window.location.href = 'mentor_interface.html?role=' + role;
+            } else if (role === 'Admin') {
+                // Admin goes to the dedicated Admin Registration/Login page (or just login)
+                window.location.href = 'admin_interface.html?role=' + role; 
+            }
+        }
+        
+        // This makes the entire button clickable, though the <a> tag handles this better.
+        // The onclick handler is the main mechanism here.
+    </script>
+    <script src="/static/main.js"></script>
+</body>
+</html>
